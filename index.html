@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="cache-control" content="no-cache"/>
+    <meta http-equiv="expires" content="0"/>
+    <meta http-equiv="pragma" content="no-cache"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilos.css">
+    
+    <title>Alquilar Carros</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/ajax.js"></script>    
+</head>
+<body>
+    <h1 class='title'>ALQUILER DE CARROS</h1>
+    <div class='container'>        
+        <br>
+        <h4>Tabla Carros</h4>
+        <table class='table' id='tabla-carros'>
+            <tr>
+                <th>ID Carro</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Category_ID</th>
+                <th>Detalle</th>
+            </tr>
+        </table>
+        <button id="Boton-Llenar" class='margin-button'>Tabla Carros</button>
+        <br> 
+        <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Carro' />
+        <br>
+        <button id="id-carro" class='margin-button'>Buscar ID</button>
+        <button id="Borrar-Carro">Borrar Carro</button>
+        <br>
+        <form id='forma'>
+            <h5>Agregar Carro</h5>
+            <div class='mb-3'>
+                <label for='ID'>ID</label>
+                <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Agregar-Carro' />
+            </div>
+            <div class='mb-3'>
+                <label for='BRAND'>Brand</label>
+                <input type="text" class="form-control" placeholder="Escribe la marca" id='Marca-Carro' />
+            </div>
+            <div class='mb-3'>
+                <label for='Model'>Model</label>
+                <input type="number" class="form-control" placeholder="Escribe el modelo" id='Modelo-Carro' />
+            </div>
+            <div class='mb-3'>
+                <label for='CATEGORY_ID'>Category_ID</label>
+                <input type="number" class="form-control" placeholder="Escribe Category_ID" id='Category_ID-Carro' />
+            </div>
+        </form>
+        <button class='margin-button' id="Agregar-Carro">Agregar</button>
+        <button class='margin-button'>Actualizar</button>
+        <br>
+    </div>    
+    <div class='container'>
+        <h4>Tabla Cliente</h4>
+        <table class='table' id='tabla-cliente'>
+            <tr>
+                <th>ID Cliente</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Edad</th>
+                <th>Detalle</th>
+            </tr>
+        </table>
+        <button id="Boton-Cliente" class='margin-button'>Tabla Clientes</button>
+        <br>
+        <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Cliente'/>
+        <br>
+        <button id="id-cliente" class='margin-button'>Buscar ID</button>
+        <form id='forma'>
+            <h5>Agregar Cliente</h5>
+            <div class='mb-3'>
+                <label for='ID'>ID</label>
+                <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Cliente' />
+            </div>
+            <div class='mb-3'>
+                <label for='Name'>Name</label>
+                <input type="text" class="form-control" placeholder="Escribe Nombre" id='Nombre-Cliente' />
+            </div>
+            <div class='mb-3'>
+                <label for='Email'>Email</label>
+                <input type="email" class="form-control" placeholder="Escribe Email" id='Email-Cliente' />
+            </div>
+            <div class='mb-3'>
+                <label for='Age'>Age</label>
+                <input type="number" class="form-control" placeholder="Escribe edad" id='Edad-Cliente' />
+            </div>
+        </form>
+        <button class='margin-button'>Agregar</button>
+        <button class='margin-button'>Actualizar</button>
+    </div>
+    <div class='container'>        
+        <h4>Tabla Mensaje</h4>
+        <table class='table' id='tabla-mensaje'>
+            <tr>
+                <th>ID Mensaje</th>
+                <th>Mensaje</th>
+                <th>Detalle</th>
+            </tr>
+        </table>
+        <button id="Boton-Mensaje" class='margin-button'>Tabla Mensajes</button>        
+        <br>
+        <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Mensaje' />
+        <br>
+        <button id="id-mensaje" class="margin-button">Buscar ID</button>
+        <button id="Borrar-Mensaje">Borrar Mensaje</button>
+        <br>
+        <form id='forma'>
+            <h5>Registo de Mensaje</h5>
+            <div class='mb-3'>
+                <label for='ID'>ID</label>
+                <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Mensaje' />
+            </div>
+            <div class='mb-3'>
+                <label for='Mensaje'>Message</label>
+                <input type="text" class="form-control" placeholder="Escribe tu mensaje" id='Mensaje-Texto' />
+            </div>
+        </form>
+        <button class='margin-button'>Agregar</button>
+        <button class='margin-button'>Actualizar</button>
+        <br>
+    </div>
+</body>
+</html>
