@@ -204,7 +204,7 @@ $(document).ready(function () {
 
                 $("#tabla-carros tbody").empty();
 
-                salidaFila = "<tr><th>" + id + "</th><th>" + marca + "</th><th>" + modelo + "</th><th>" + categoryId + "</th></tr>";
+                salidaFila = "<tr><th>ID Carro</th><th>Marca</th><th>Modelo</th><th>Category_ID</th><th>Detalle</th></tr>";
                 $("#tabla-carros tbody").append(salidaFila);
 
 
