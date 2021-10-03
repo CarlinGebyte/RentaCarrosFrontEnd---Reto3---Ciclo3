@@ -1,50 +1,5 @@
 $(document).ready(function () {
-    jQuery.support.cors = true;
-    $("#Borrar-Carro").click(function () {
-        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
-        var id = $("#ID-Carro").val();
-        $("#tabla.carros tbody").empty();
-        $.ajax({
-            url: urlServicio,
-            type: "DELETE",
-            data: JSON.stringify({id:id}),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            cache: false,
-        } );   
-    })
-    $("#Agregar-Carro").click(function () {
-        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
-        var idCarro = parseInt($("#ID-Agregar-Carro").val());
-        var marcaCarro = $("#Marca-Carro").val();
-        var modeloCarro = parseInt($("#Modelo-Carro").val());
-        var categoryIdCarro = parseInt($("#Category-ID-Carro").val());
-        $("#tabla.carros tbody").empty();
-        $.ajax({
-            url: urlServicio,
-            type: "POST",
-            data: JSON.stringify({ "id":idCarro, "brand":marcaCarro, "model":modeloCarro, "category_id":categoryIdCarro }),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            cache: false,
-        } );   
-    })
-    $("#Actualizar-Carro").click(function () {
-        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
-        var idCarro = parseInt($("#ID-Agregar-Carro").val());
-        var marcaCarro = $("#Marca-Carro").val();
-        var modeloCarro = parseInt($("#Modelo-Carro").val());
-        var categoryIdCarro = parseInt($("#Category-ID-Carro").val());
-        $("#tabla.carros tbody").empty();
-        $.ajax({
-            url: urlServicio,
-            type: "PUT",
-            data: JSON.stringify({ "id":idCarro, "brand":marcaCarro, "model":modeloCarro, "category_id":categoryIdCarro }),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            cache: false,
-        } );   
-    })
+    jQuery.support.cors = true;    
     $("#Tabla-Carro").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
         $("#tabla.carros tbody").empty();
@@ -89,6 +44,52 @@ $(document).ready(function () {
             }
         });
     })
+    $("#Borrar-Carro").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
+        var id = $("#ID-Carro").val();
+        $("#tabla.carros tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "DELETE",
+            data: JSON.stringify({id:id}),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })    
+    $("#Agregar-Carro").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
+        var idCarro = parseInt($("#ID-Agregar-Carro").val());
+        var marcaCarro = $("#Marca-Carro").val();
+        var modeloCarro = parseInt($("#Modelo-Carro").val());
+        var categoryIdCarro = parseInt($("#Category-ID-Carro").val());
+        $("#tabla.carros tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "POST",
+            data: JSON.stringify({ "id":idCarro, "brand":marcaCarro, "model":modeloCarro, "category_id":categoryIdCarro }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })
+    $("#Actualizar-Carro").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
+        var idCarro = parseInt($("#ID-Agregar-Carro").val());
+        var marcaCarro = $("#Marca-Carro").val();
+        var modeloCarro = parseInt($("#Modelo-Carro").val());
+        var categoryIdCarro = parseInt($("#Category-ID-Carro").val());
+        $("#tabla.carros tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "PUT",
+            data: JSON.stringify({ "id":idCarro, "brand":marcaCarro, "model":modeloCarro, "category_id":categoryIdCarro }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })    
+    
     $("#Boton-Cliente").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
         $("#tabla.cliente tbody").empty();
