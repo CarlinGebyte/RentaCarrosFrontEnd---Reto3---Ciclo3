@@ -204,7 +204,7 @@ $(document).ready(function () {
 
                 $("#tabla-carros tbody").empty();
 
-                salidaFila = "<tr><td>ID Carro</td><td>Marca</td><td>Modelo</td><td>Category_ID</td><td>Detalle</td></tr>";
+                salidaFila = "<tr><th>" + id + "</th><th>" + marca + "</th><th>" + modelo + "</th><th>" + categoryId + "</th></tr>";
                 $("#tabla-carros tbody").append(salidaFila);
 
 
@@ -257,7 +257,7 @@ $(document).ready(function () {
 
                 $("#tabla-cliente tbody").empty();
 
-                salidaFila = "<tr><td>ID Cliente</td><td>Nombre</td><td>Email</td><td>Edad</td><td>Detalle</td></tr>";
+                salidaFila = "<tr><th>ID Cliente</th><th>Nombre</th><th>Email</th><th>Edad</th><th>Detalle</th></tr>";
                 $("#tabla-cliente tbody").append(salidaFila);
 
 
@@ -308,7 +308,7 @@ $(document).ready(function () {
 
                 $("#tabla-mensaje tbody").empty();
 
-                salidaFila = "<tr><td>ID Mensaje</td><td>Mensaje</td><td>Detalle</td></tr>";
+                salidaFila = "<tr><th>ID Mensaje</th><th>Mensaje</th><th>Detalle</th></tr>";
                 $("#tabla-mensaje tbody").append(salidaFila);
 
 
