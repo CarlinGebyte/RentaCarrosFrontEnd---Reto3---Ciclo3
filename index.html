@@ -28,7 +28,6 @@
                 <th>Marca</th>
                 <th>Modelo</th>
                 <th>Category_ID</th>
-                <th>Detalle</th>
             </tr>
         </table>
         <button id="Tabla-Carro" class='margin-button'>Actualizar Tabla</button>
@@ -44,7 +43,7 @@
                 <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Agregar-Carro' />
             </div>
             <div class='mb-3'>
-                <label for='BRAND'>Brand</label>
+                <label for='BRAND'>Marca</label>
                 <input type="text" class="form-control" placeholder="Escribe la marca" id='Marca-Carro' />
             </div>
             <div class='mb-3'>
@@ -67,7 +66,6 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Edad</th>
-                <th>Detalle</th>
             </tr>
         </table>
         <button id="Boton-Cliente" class='margin-button'>Tabla Clientes</button>
@@ -79,7 +77,7 @@
             <h5>Agregar Cliente</h5>
             <div class='mb-3'>
                 <label for='ID'>ID</label>
-                <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Cliente' />
+                <input type="number" class='form-control' placeholder="Escribe ID" id='Agregar-ID-Cliente' />
             </div>
             <div class='mb-3'>
                 <label for='Name'>Name</label>
@@ -94,8 +92,8 @@
                 <input type="number" class="form-control" placeholder="Escribe edad" id='Edad-Cliente' />
             </div>
         </form>
-        <button class='margin-button'>Agregar</button>
-        <button class='margin-button'>Actualizar</button>
+        <button class='margin-button' id="Agregar-Cliente">Agregar</button>
+        <button class='margin-button' id="Actualizar-Cliente">Actualizar</button>
     </div>
     <div class='container'>        
         <h4>Tabla Mensaje</h4>
@@ -103,7 +101,6 @@
             <tr>
                 <th>ID Mensaje</th>
                 <th>Mensaje</th>
-                <th>Detalle</th>
             </tr>
         </table>
         <button id="Boton-Mensaje" class='margin-button'>Tabla Mensajes</button>        
@@ -111,21 +108,21 @@
         <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Mensaje' />
         <br>
         <button id="buscar-id-mensaje" class="margin-button">Buscar ID</button>
-        <button id="Borrar-Mensaje">Borrar Mensaje</button>
+        <button id="Borrar-Mensaje" id='Borrar-Mensaje'>Borrar Mensaje</button>
         <br>
         <form id='forma'>
             <h5>Registo de Mensaje</h5>
             <div class='mb-3'>
                 <label for='ID'>ID</label>
-                <input type="number" class='form-control' placeholder="Escribe ID" id='ID-Mensaje' />
+                <input type="number" class='form-control' placeholder="Escribe ID" id='Agregar-ID-Mensaje' />
             </div>
             <div class='mb-3'>
                 <label for='Mensaje'>Message</label>
                 <input type="text" class="form-control" placeholder="Escribe tu mensaje" id='Mensaje-Texto' />
             </div>
         </form>
-        <button class='margin-button'>Agregar</button>
-        <button class='margin-button'>Actualizar</button>
+        <button class='margin-button' id="Agregar-Mensaje">Agregar</button>
+        <button class='margin-button' id="Actualizar-Mensaje">Actualizar</button>
     </div>
 </body>
 </html>
