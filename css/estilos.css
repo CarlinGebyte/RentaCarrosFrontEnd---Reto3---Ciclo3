@@ -1,6 +1,10 @@
 .margin-button{
     margin-bottom: 15px;
     margin-right: 10px;
+    border: 1px solid #000/*rgb(12, 119, 206)*/;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
 }
 
 .container{
