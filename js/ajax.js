@@ -23,7 +23,7 @@ $(document).ready(function () {
 
                 $("#tabla-carros tbody").empty();
 
-                salidaFila = "<tr><th>ID Carro</th><th>Marca</th><th>Modelo</th><th>Category_ID</th><th>Detalle</th></tr>";
+                salidaFila = "<tr><th>ID Carro</th><th>Marca</th><th>Modelo</th><th>Category_ID</th></tr>";
                 $("#tabla-carros tbody").append(salidaFila);
 
                 for (i = 0; i < result.items.length; i++) {
@@ -113,7 +113,7 @@ $(document).ready(function () {
 
                 $("#tabla-cliente tbody").empty();
 
-                salidaFila = "<tr><th>ID Cliente</th><th>Nombre</th><th>Email</th><th>Edad</th><th>Detalle</th></tr>";
+                salidaFila = "<tr><th>ID Cliente</th><th>Nombre</th><th>Email</th><th>Edad</th></tr>";
                 $("#tabla-cliente tbody").append(salidaFila);
 
                 for (i = 0; i < result.items.length; i++) {
@@ -134,6 +134,52 @@ $(document).ready(function () {
             }
         });
     })
+    $("#Borrar-Cliente").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
+        var id = $("#ID-Cliente").val();
+        $("#tabla.cliente tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "DELETE",
+            data: JSON.stringify({id:id}),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })    
+    $("#Agregar-Cliente").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
+        var idCliente = parseInt($("#Agregar-ID-Cliente").val());
+        var nombreCliente = $("#Nombre-Cliente").val();
+        var emailCliente = $("#Email-Cliente").val();
+        var edadCliente = parseInt($("#Edad-Cliente").val());
+        $("#tabla.cliente tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "POST",
+            data: JSON.stringify({ "id":idCliente, "name":nombreCliente, "email":emailCliente, "age":edadCliente }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })
+    $("#Actualizar-Cliente").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
+        var idCliente = parseInt($("#Agregar-ID-Cliente").val());
+        var nombreCliente = $("#Nombre-Cliente").val();
+        var emailCliente = $("#Email-Cliente").val();
+        var edadCliente = parseInt($("#Edad-Cliente").val());
+        $("#tabla.cliente tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "PUT",
+            data: JSON.stringify({ "id":idCliente, "name":nombreCliente, "email":emailCliente, "age":edadCliente }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })
+
     $("#Boton-Mensaje").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message";
         $("#tabla.mensaje tbody").empty();
@@ -155,7 +201,7 @@ $(document).ready(function () {
 
                 $("#tabla-mensaje tbody").empty();
 
-                salidaFila = "<tr><th>ID Mensaje</th><th>Mensaje</th><th>Detalle</th></tr>";
+                salidaFila = "<tr><th>ID Mensaje</th><th>Mensaje</th></tr>";
                 $("#tabla-mensaje tbody").append(salidaFila);
 
                 for (i = 0; i < result.items.length; i++) {
@@ -174,6 +220,48 @@ $(document).ready(function () {
             }
         });
     })
+$("#Borrar-Mensaje").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message";
+        var id = $("#ID-Mensaje").val();
+        $("#tabla.mensaje tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "DELETE",
+            data: JSON.stringify({id:id}),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })    
+    $("#Agregar-Mensaje").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message";
+        var idMensaje = parseInt($("#Agregar-ID-Mensaje").val());
+        var mensaje = $("#Mensaje-Texto").val();
+        $("#tabla.cliente tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "POST",
+            data: JSON.stringify({ "id":idMensaje, "messagetext":mensaje}),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })
+    $("#Actualizar-Mensaje").click(function () {
+        var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message";
+        var idMensaje = parseInt($("#Agregar-ID-Mensaje").val());
+        var mensaje = $("#Mensaje-Texto").val();
+        $("#tabla.mensaje tbody").empty();
+        $.ajax({
+            url: urlServicio,
+            type: "PUT",
+            data: JSON.stringify({ "id":idMensaje, "messagetext":mensaje}),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            cache: false,
+        } );   
+    })
+
     $("#buscar-id-carro").click(function(){
         var uriServicioBusqueda = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car/";
     
@@ -205,7 +293,7 @@ $(document).ready(function () {
 
                 $("#tabla-carros tbody").empty();
 
-                salidaFila = "<tr><th>ID Carro</th><th>Marca</th><th>Modelo</th><th>Category_ID</th><th>Detalle</th></tr>";
+                salidaFila = "<tr><th>ID Carro</th><th>Marca</th><th>Modelo</th><th>Category_ID</th></tr>";
                 $("#tabla-carros tbody").append(salidaFila);
 
 
@@ -258,7 +346,7 @@ $(document).ready(function () {
 
                 $("#tabla-cliente tbody").empty();
 
-                salidaFila = "<tr><th>ID Cliente</th><th>Nombre</th><th>Email</th><th>Edad</th><th>Detalle</th></tr>";
+                salidaFila = "<tr><th>ID Cliente</th><th>Nombre</th><th>Email</th><th>Edad</th></tr>";
                 $("#tabla-cliente tbody").append(salidaFila);
 
 
@@ -309,7 +397,7 @@ $(document).ready(function () {
 
                 $("#tabla-mensaje tbody").empty();
 
-                salidaFila = "<tr><th>ID Mensaje</th><th>Mensaje</th><th>Detalle</th></tr>";
+                salidaFila = "<tr><th>ID Mensaje</th><th>Mensaje</th></tr>";
                 $("#tabla-mensaje tbody").append(salidaFila);
 
 
