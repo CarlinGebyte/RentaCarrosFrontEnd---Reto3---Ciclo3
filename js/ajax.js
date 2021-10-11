@@ -47,7 +47,6 @@ $(document).ready(function () {
     $("#Borrar-Carro").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/car/car";
         var id = $("#ID-Carro").val();
-        $("#tabla.carros tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "DELETE",
@@ -63,7 +62,6 @@ $(document).ready(function () {
         var marcaCarro = $("#Marca-Carro").val();
         var modeloCarro = parseInt($("#Modelo-Carro").val());
         var categoryIdCarro = parseInt($("#Category-ID-Carro").val());
-        $("#tabla.carros tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "POST",
@@ -79,7 +77,6 @@ $(document).ready(function () {
         var marcaCarro = $("#Marca-Carro").val();
         var modeloCarro = parseInt($("#Modelo-Carro").val());
         var categoryIdCarro = parseInt($("#Category-ID-Carro").val());
-        $("#tabla.carros tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "PUT",
@@ -137,7 +134,6 @@ $(document).ready(function () {
     $("#Borrar-Cliente").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client";
         var id = $("#ID-Cliente").val();
-        $("#tabla.cliente tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "DELETE",
@@ -153,7 +149,6 @@ $(document).ready(function () {
         var nombreCliente = $("#Nombre-Cliente").val();
         var emailCliente = $("#Email-Cliente").val();
         var edadCliente = parseInt($("#Edad-Cliente").val());
-        $("#tabla.cliente tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "POST",
@@ -169,7 +164,6 @@ $(document).ready(function () {
         var nombreCliente = $("#Nombre-Cliente").val();
         var emailCliente = $("#Email-Cliente").val();
         var edadCliente = parseInt($("#Edad-Cliente").val());
-        $("#tabla.cliente tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "PUT",
@@ -220,10 +214,9 @@ $(document).ready(function () {
             }
         });
     })
-$("#Borrar-Mensaje").click(function () {
+    $("#Borrar-Mensaje").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message";
         var id = $("#ID-Mensaje").val();
-        $("#tabla.mensaje tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "DELETE",
@@ -237,7 +230,6 @@ $("#Borrar-Mensaje").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message";
         var idMensaje = parseInt($("#Agregar-ID-Mensaje").val());
         var mensaje = $("#Mensaje-Texto").val();
-        $("#tabla.cliente tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "POST",
@@ -251,7 +243,6 @@ $("#Borrar-Mensaje").click(function () {
         var urlServicio = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message";
         var idMensaje = parseInt($("#Agregar-ID-Mensaje").val());
         var mensaje = $("#Mensaje-Texto").val();
-        $("#tabla.mensaje tbody").empty();
         $.ajax({
             url: urlServicio,
             type: "PUT",
@@ -306,7 +297,6 @@ $("#Borrar-Mensaje").click(function () {
                     marca + "</td><td>" + modelo + "</td><td>" + categoryId + "</td></tr>";
                     
                     $("#tabla-carros tbody").append(estructuraFila);
-                    $("#tabla-carros").addClass("estiloRelleno" );
                 }
                 
                 $("#tabla-carros tbody").show();
@@ -314,7 +304,7 @@ $("#Borrar-Mensaje").click(function () {
             }});
 
     });
-    //Fin del selector  del boton de busqueda
+    
     $("#buscar-id-cliente").click(function(){
         var uriServicioBusqueda = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/client/client/";
     
@@ -359,7 +349,6 @@ $("#Borrar-Mensaje").click(function () {
                     nombre + "</td><td>" + email + "</td><td>" + edad + "</td></tr>";
                     
                     $("#tabla-cliente tbody").append(estructuraFila);
-                    $("#tabla-cliente").addClass("estiloRelleno" );
                 }
                 
                 $("#tabla-cliente tbody").show();
@@ -367,7 +356,7 @@ $("#Borrar-Mensaje").click(function () {
             }});
 
     });
-    //Fin del selector  del boton de busqueda
+
     $("#buscar-id-mensaje").click(function(){
         var uriServicioBusqueda = "https://g272857530b233b-db202109272016.adb.sa-saopaulo-1.oraclecloudapps.com/ords/admin/message/message/";
     
@@ -408,7 +397,6 @@ $("#Borrar-Mensaje").click(function () {
                     mensaje + "</td></tr>";
                     
                     $("#tabla-mensaje tbody").append(estructuraFila);
-                    $("#tabla-mensaje").addClass("estiloRelleno" );
                 }
                 
                 $("#tabla-mensaje tbody").show();
@@ -416,5 +404,4 @@ $("#Borrar-Mensaje").click(function () {
             }});
 
     });
-    //Fin del selector  del boton de busqueda
 })
